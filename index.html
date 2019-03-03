@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Shop</title>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script src="script_close_block.js"></script>
+<body>
+<header class="container header">
+    <div class="title">
+        <img src="title.png">
+    </div>
+    <div class="searcher">
+        <input id="searchInput" list="searchDataList" type="text"/>
+        <datalist id="searchDataList">
+            <option>aaa</option>
+            <option>bbb</option>
+            <option>ddd</option>
+        </datalist>
+        <a href="search.html"><img src="search.png"></a>
+    </div>
+</header>
+<nav class="container nav">
+    <ul class="navBar">
+        <li class="navLink"><a href="index.html">首页</a></li>
+        <li class="navLink"><a href="item.html">商品</a></li>
+        <span class="toLogin">
+            <li class="navLink"><a href="javascript:void(0)" onclick="login();">登录</a></li>
+            <li class="navLink"><a href="javascript:void(0)" onclick="register();">注册</a></li>
+        </span>
+        <span class="welcome">
+            <li>Welcome!</li>
+            <li class="navLink"><a href="" onclick="logout();">登出</a></li>
+        </span>
+    </ul>
+</nav>
+<div class="loginBlock">
+    <a href="javascript:void(0);" onclick="close2();"><img src="close.png"></a>
+    <form id="loginForm">
+        <p></p>
+        <p>用户名：<br><input name="user" type="text"></p>
+        <p>密码：<br><input name="pwd" type="password"></p>
+        <p class="verClass">验证码：<input type="text" name="ver"><br>
+            <div class="verification">
+                <img id="1" src="verificationCode/1.jpg">
+                <img id="5" src="verificationCode/5.jpg">
+                <img id="2" src="verificationCode/2.jpg">
+                <img id="3" src="verificationCode/3.jpg">
+            </div>
+        </p>
+        <p><input type="button" value="登录" id="loginButton" onclick="loginSubmit();"></p>
+    </form>
+</div>
+<div class="registerBlock">
+    <a href="javascript:void(0);" onclick="close1();"><img src="close2.png"></a>
+    <form id="registerForm" method="get">
+        <p>用户名：<input id="regUser" name="user" type="text">
+            <span id="invalidUser">用户名不符合格式<br><span class="former">至少需要六个字符且不能为纯数字或字母</span></span>
+            <span id="emptyUser">未填写用户名</span>
+        </p>
+        <p>邮箱：<input id="regEmail" name="mail" type="text">
+            <span id="invalidMail">邮箱不符合格式<br><span class="former">请填写邮箱名@服务商.com/org/net/cn</span></span>
+            <span id="emptyMail">未填写邮箱</span>
+        </p>
+        <p>密码：<input id="regPwd" name="pwd" type="password">
+            <span id="invalidPwd">密码不符合格式<br><span class="former">至少需要六个字符且不能与用户名相同</span></span>
+            <span id="emptyPwd">未填写密码</span>
+        </p>
+        <p>确认密码：<input id="regRepPwd" name="confirmPwd" type="password">
+            <span id="invalidRep">两次密码输入不同</span>
+            <span id="emptyRep">未重复填写密码</span>
+        </p>
+        <p><input type="button" value="注册" id="registerButton" onclick="registerSubmit()"></p>
+    </form>
+</div>
+<div class="cover"></div>
+    <div class="leftTop">
+        个人信息
+    </div>
+    <aside class="left">
+        <div class="personal login">
+            <img src="icon.jpg">
+            <ul>
+                <li>用户名：hakutou</li>
+                <li>已完成订单：0件</li>
+                <li>未完成订单：0件</li>
+                <span class="hoverSpan" onmouseover="showCartContent();" onmouseleave="hideCartContent();"><li><a href="shoppingCart.html" class="personalLink"
+                >购物车</a>：0件</li></span>
+                <li><a href="info.html" class="personalLink">read more</a></li>
+            </ul>
+        </div>
+        <div id="showCartInOtherPage">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/works/small/001080.jpg">
+                        <p>title</p>
+                    </td>
+                    <td>
+                        <img src="images/works/small/008020.jpg">
+                        <p>title</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="personal notLogin">
+            <img src="icon.jpg">
+            <ul>
+                <li>您尚未登录！</li>
+            </ul>
+        </div>
+    </aside>
+    <div class="leftTop whiteBlock"></div>
+    <div class="leftTop leftTop2">
+        热门风格
+    </div>
+    <aside class="left">
+        <div class="personal hotStyle">
+            <ul>
+                <li>hot style 1</li>
+                <li>hot style 2</li>
+                <li>hot style 3</li>
+                <li>hot style 4</li>
+            </ul>
+        </div>
+    </aside>
+    <article class="right">
+        <div class="hotPaint">
+            <div class="hotPaintImg">
+                <ul class="imgList">
+                    <li>
+                        <span><a href="item.html"><img src="images/works/large/002030.jpg"></a></span>
+                        <div>
+                            <p class="title">title - artist</p>
+                            <p class="info">information about the paint</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span><a href="item.html"><img src="images/works/large/005060.jpg"></a></span>
+                        <div>
+                            <p class="title">title - artist</p>
+                            <p class="info">information about the paint</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span><a href="item.html"><img src="images/works/large/008020.jpg"></a></span>
+                        <div>
+                            <p class="title">title - artist</p>
+                            <p class="info">information about the paint</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span><a href="item.html"><img src="images/works/large/015100.jpg"></a></span>
+                        <div>
+                            <p class="title">title - artist</p>
+                            <p class="info">information about the paint</p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="block"></div>
+                <div id="block2">
+                    <p class="title">title - artist</p>
+                    <p class="info">information about the paint</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="otherPaint">
+            <table class="paintings">
+                <td>
+                    <a href="item.html"><img src="images/works/average/001020.jpg"></a>
+                    <p>title - artist</p>
+                </td>
+                <td>
+                    <a href="item.html"><img src="images/works/average/001050.jpg"></a>
+                    <p>title - artist</p>
+                </td>
+                <td>
+                    <a href="item.html"><img src="images/works/average/001060.jpg"></a>
+                    <p>title - artist</p>
+                </td>
+            </table>
+        </div>
+    </article>
+
+<footer class="authorInfo">
+    make by Hakutou 2019
+</footer>
+<script src="script_login.js"></script>
+</body>
+</html>

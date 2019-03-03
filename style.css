@@ -1,0 +1,653 @@
+.container{
+    position: relative;
+    z-index: 0;
+}
+.header{
+    display: flex;
+    background: #f0f0f0;
+}
+.title{
+    width: 70%;
+    display: inline-block;
+}
+.title img{
+    margin-left: 15%;
+}
+.searcher{
+    width: 20%;
+    align-self: center;
+    display: inline-block;
+}
+.searcher img{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 auto;
+}
+.searcher input{
+    margin: 2px 2px 2px 2px;
+    font-size: large;
+    padding-top: 8px;
+    display: inline-block;
+    background: #fff0f0;
+}
+.nav{
+    width: inherit;
+    clear:both;
+    background: #ff9999;
+}
+.navBar{
+    height: 40px;
+}
+.navBar li{
+    width: 24.6%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+.toLogin li{
+    width: 24.6%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+.welcome li{
+    color: white;
+    text-align: center;
+}
+
+.toLogin li a:link{
+     color: white;
+}
+.navLink a:link{
+     color: white !important;
+}
+.navLink a:visited{
+    color: white;
+}
+.navLink a:hover{
+    color: #ff5555;
+}
+
+.toLogin li a:hover{
+    color: #ff5555;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: inherit;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+.loginBlock{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background: white;
+    width: 400px;
+    height: 400px;
+}
+.registerBlock{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background: white;
+    width: 500px;
+    height: 400px;
+}
+.loginBlock form{
+    position: absolute;
+    top: 15%;
+    left: 27%;
+}
+.registerBlock form{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+.loginBlock a img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.registerBlock a img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#invalidUser{
+    display: none;
+    color: red;
+}
+#invalidRep{
+    display: none;
+    color: red;
+}
+#invalidPwd{
+    display: none;
+    color: red;
+}
+#invalidMail{
+    display: none;
+    color: red;
+}
+#emptyUser{
+    display: none;
+    color: red;
+}
+#emptyRep{
+    display: none;
+    color: red;
+}
+#emptyPwd{
+    display: none;
+    color: red;
+}
+#emptyMail{
+    display: none;
+    color: red;
+}
+.former{
+    display: inherit;
+    color: inherit;
+    font-size: smaller;
+}
+.verClass input{
+    width: 50%;
+}
+.verification{
+    height: max-content;
+    width: 60%;
+    padding: 0 0;
+    border: #aaaaaa 1px solid;
+}
+.verification img{
+    width: 20%;
+    height: 15%;
+    margin: 0 0;
+}
+.cover{
+    display: none;
+    width:100%;
+    height:inherit;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index:2;
+    background-color:black;
+    opacity:0.3;
+}
+.left{
+    background: #f0f0f0;
+    margin-left: 15%;
+    margin-right: 5%;
+    width: 15%;
+    display: flex;
+    float: left;
+    overflow: auto;
+}
+.leftTop{
+    margin-top: 2.5%;
+    margin-left: 15%;
+    margin-right: 0 !important;
+    width: 15%;
+    padding-top: 0;
+    height: min-content;
+    background: #ff9999;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.whiteBlock{
+    background: white!important;
+    height: 150px;
+}
+.personal.login{
+    display: none;
+}
+.personal{
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-bottom: 20%;
+    width: 100%;
+    white-space: nowrap;
+    word-wrap:break-word;
+    word-break:break-all;
+    position: relative;
+}
+.personal ul{
+    position: relative;
+    left:16%;
+}
+.personal li{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: #aaaaaa 1px solid;
+    width: max-content;
+}
+.personal img{
+    margin-top: 8%;
+    margin-left: 9%;
+    width: 100px;
+    height: 100px;
+}
+.hotStyle ul{
+    width: 80%;
+}
+.right{
+    float: right;
+    width: 50%;
+    position: absolute;
+    top: 25%;
+    right: 13%;
+    height: 100%;
+    /*margin-right: 15%;
+    margin-top: -18%;*/
+}
+.hotPaint{
+    overflow: hidden;
+}
+.hotPaintImg ul li span img{
+    width: 95%;
+    max-height: 450px;
+    background: #f0f0f0;
+    padding: 2.5% 2.5%;
+    overflow: hidden;
+}
+#block{
+    background: #f0f0f0;
+    width: 100%;
+    height: 500px;
+}
+.hotPaintImg{
+    width: 100%;
+    margin-bottom: 5%;
+}
+.hotPaintImg ul{
+    list-style: none;
+    position: relative;
+}
+.imgList li span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 500px;
+    width: 100%;
+    opacity: 0;
+    animation: image 12s linear infinite;
+    -webkit-animation: image 12s linear infinite;
+}
+.imgList li div{
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    right: 25%;
+    top: 520px;
+    opacity: 0;
+    animation: image 12s linear infinite;
+    -webkit-animation: image 12s linear infinite;
+}
+.imgList li span img{
+    height: 500px;
+}
+.imgList li div p{
+    background: none!important;
+}
+.imgList li div p a:link{
+    color: #ff5555 !important;
+}
+.imgList li div p a:visited{
+    color: #ff5555 !important;
+}
+.imgList li div p a:hover{
+    color: #f0f0f0 !important;
+}
+.imgList li:nth-child(1) span,
+.imgList li:nth-child(1) div{
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+}
+.imgList li:nth-child(2) span,
+.imgList li:nth-child(2) div{
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+}
+.imgList li:nth-child(3) span,
+.imgList li:nth-child(3) div{
+    animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+}
+.imgList li:nth-child(4) span,
+.imgList li:nth-child(4) div{
+    animation-delay: 9s;
+    -webkit-animation-delay: 9s;
+}
+@keyframes image {
+    0%{opacity: 0;}
+    8%{opacity: 1;}
+    16%{opacity: 1;}
+    26%{opacity: 0;}
+    100%{opacity: 0;}
+}
+.hotPaint p.title{
+    text-align: center;
+    background: #fff0f0;
+    width: 100%;
+    padding: 2.5% 2.5%;
+    color: #ff5555;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.hotPaint p.info{
+    text-align: center;
+    background: #f0f0f0;
+    width: 100%;
+    padding: 2.5% 2.5%;
+    margin-top: 0;
+    font-size: smaller;
+}
+#block2 p{
+    color: rgba(0,0,0,0);
+}
+.otherPaint{
+    overflow: auto;
+}
+.paintings{
+    margin-left: 5%;
+}
+.paintings td{
+    width: 30%;
+}
+.paintings td img{
+    border-radius: 50%;
+    background: #fff0f0;
+    padding: 2.5% 2.5%;
+}
+.paintings td p{
+    margin-right: 5%;
+    width: 90%;
+    text-align: center;
+    background: #f0f0f0;
+}
+.paintings td p a{
+    color: black !important;
+}
+.itemInfo{
+    width: 100%;
+    position: relative;
+}
+.itemImgBox{
+    width: 50%;
+    height: 50%;
+    background: #f0f0f0;
+    padding: 2.5% 2.5%;
+    overflow: hidden;
+}
+
+.itemInfo img{
+    width:100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.itemInfo img:hover{
+    transform: scale(1.4);
+}
+.itemInfo ul{
+    display: inline-block;
+    list-style: none;
+    position: absolute;
+    top:0;
+    left: 50%;
+    margin-left: 5%;
+    padding-left: 5%;
+}
+.itemInfo ul li{
+    margin-bottom: 12%;
+    background: #f0f0f0;
+    border-bottom: #aaaaaa 1px solid;
+}
+.itemTitle{
+    margin-bottom: 23% !important;
+    background: #fff0f0 !important;
+    color: #ff5555;
+    font-size: xx-large;
+    font-weight: bold;
+}
+#authorToSearchPage a{
+    color: #ff5555 !important;
+}
+.evenLi{
+     background: #fff0f0 !important;
+ }
+.addToCar{
+    position: absolute;
+    left: 22%;
+    top: 100%;
+    margin-top: 3%;
+    background: #ff9999;
+    color: white;
+}
+.searchItemList{
+    width: 100%;
+}
+.searchItemList td{
+    width: 25%;
+    padding-bottom: 3%;
+}
+.searchItemList td p{
+    margin-left: 2.5%;
+    width: 80%;
+    text-align: center;
+    background: #f0f0f0;
+    border-bottom: #aaaaaa 1px solid;
+}
+.searchItemList td p a{
+    color: #ff5555;
+}
+.searchItemList td img{
+    background: #fff0f0;
+    padding: 2.5% 2.5%;
+}
+.searchItemTitle{
+    background: #fff0f0!important;
+}
+.changePage{
+    margin-top: 5%;
+    width: 100%;
+}
+.changePage ul{
+    margin: 0 auto;
+    width: fit-content;
+    list-style: none;
+}
+.changePage ul li{
+    display: inline-block;
+    background: #fff0f0;
+    color: #ff5555;
+    font-weight: bold;
+}
+.changePage ul li a{
+    color: #ff5555;
+}
+.changePage ul li a:hover{
+    color: #ffaaaa !important;
+}
+.showSearchItemMethod{
+    margin-bottom: 2.5%;
+}
+.submitButton{
+    margin-left: 2.5%;
+}
+.cartTitle{
+    color: #ff5555;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    background: #fff0f0;
+    margin-bottom: 2.5%;
+}
+.cartContent{
+    background: #f0f0f0;
+    position: relative;
+    height: max-content;
+}
+#cartItems tbody tr td{
+    text-align: left;
+    border-bottom: #aaaaaa 2px dotted;
+}
+.cartItemImgTd{
+    width: 50%;
+}
+.cartItemImgTd img{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+}
+#noItemInCart{
+    display: none;
+    height: 250px;
+    background: #f0f0f0;
+    position: relative;
+}
+#noItemInCart p{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#noSearchRes{
+    display: none;
+    height: 250px;
+    background: #f0f0f0;
+    position: relative;
+}
+#noSearchRes p{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+.removeFromCart{
+    background: #ffaaaa;
+}
+#makeCartEmpty{
+    position: relative;
+    left: 85%;
+    color: white;
+    background: #ff5555;
+}
+.personalLink{
+    color: #ff5555;
+}
+.fundamentalInfo{
+    height: 45%;
+    background: #fff0f0;
+    position: relative;
+    overflow: auto;
+}
+#fundInfoText{
+    display: inline-block;
+    width: 45%;
+    padding-left: 5%;
+    position: absolute;
+    top: 10%;
+}
+#fundInfoText ul{
+    list-style: none;
+}
+#fundInfoText ul li{
+    margin-bottom: 5%;
+    font-weight: bold;
+    border-bottom: #ff5555 2px dotted;
+    width: fit-content;
+}
+.infoContent{
+    color: #ff5555;
+}
+#fundInfoImg{
+    width: 40%;
+    margin-left: 10%;
+}
+#fundInfoImg img{
+    width: 38%;
+    height: 90%;
+    margin-bottom: 0;
+}
+.orderList{
+    margin-top: 5%;
+    height: 15%;
+    background: #f0f0f0;
+    position: relative;
+    overflow: auto;
+}
+.sellList{
+    margin-top: 5%;
+    height: 15%;
+    background: #f0f0f0;
+    position: relative;
+    overflow: auto;
+}
+.upList{
+    margin-top: 5%;
+    height: 15%;
+    background: #fff0f0;
+    position: relative;
+    overflow: auto;
+}
+.orderListTable{
+    position: relative;
+    left: 10%;
+    margin-bottom: 3%;
+}
+
+.orderListTable tr td{
+    border: #aaaaaa 2px dotted;
+}
+
+.upList table tr td{
+    border: #ff5555 2px dotted;
+}
+#giveMeMoney{
+    position: relative;
+    left: 40%;
+    color: #ff5555;
+}
+.authorInfo{
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    background: white;
+    color: white;
+    font-weight: bold;
+}
+#showCartInOtherPage{
+    display: none;
+    background: #f0f0f0;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    left: 20%;
+    top: 56%;
+    z-index: 2;
+    opacity: 0.7;
+}
+#showCartInOtherPage p{
+    text-align: center;
+}
+.hoverSpan{
+    width: 120%;
+    height: 120%;
+}

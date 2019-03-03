@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="apache">
+    <serverData>
+      <paths name="Course">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/web_project" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="apache">
+        <serverdata>
+          <mappings>
+            <mapping deploy="\php\web_project" local="$PROJECT_DIR$" web="\php\web_project" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
