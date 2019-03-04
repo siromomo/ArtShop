@@ -651,3 +651,12 @@ ul, menu, dir {
     width: 120%;
     height: 120%;
 }
+.footPrint{
+    position: absolute;
+    left: 15.3%;
+    margin-top: 0.3%;
+    color: #ff5555;
+}
+.footPrintTitle{
+    font-weight: bold;
+}
