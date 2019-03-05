@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Art Shop - Search Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script_close_block.js"></script>
+    <script src="script/script_close_block.js"></script>
 </head>
 <body>
 <header class="container header">
     <div class="title">
-        <img src="title.png">
+        <img src="images/title.png">
     </div>
     <div class="searcher">
         <input id="searchInput" list="searchDataList" type="text"/>
@@ -18,7 +18,7 @@
             <option>bbb</option>
             <option>ddd</option>
         </datalist>
-        <a href="search.html"><img src="search.png"></a>
+        <a href="search.html"><img src="images/search.png"></a>
     </div>
 </header>
 <nav class="container nav">
@@ -36,7 +36,7 @@
     </ul>
 </nav>
 <div class="loginBlock">
-    <a href="javascript:void(0);" onclick="close2();"><img src="close.png"></a>
+    <a href="javascript:void(0);" onclick="close2();"><img src="images/close.png"></a>
     <form id="loginForm">
         <p></p>
         <p>用户名：<br><input name="user" type="text"></p>
@@ -53,7 +53,7 @@
     </form>
 </div>
 <div class="registerBlock">
-    <a href="javascript:void(0);" onclick="close1();"><img src="close2.png"></a>
+    <a href="javascript:void(0);" onclick="close1();"><img src="images/close2.png"></a>
     <form id="registerForm" method="get">
         <p>用户名：<input id="regUser" name="user" type="text">
             <span id="invalidUser">用户名不符合格式<br><span class="former">至少需要六个字符且不能为纯数字或字母</span></span>
@@ -83,7 +83,7 @@
     </div>
     <aside class="left">
         <section class="personal login">
-            <img src="icon.jpg">
+            <img src="images/icon.jpg">
             <ul>
                 <li>用户名：hakutou</li>
                 <li>已完成订单：0件</li>
@@ -109,7 +109,7 @@
             </table>
         </div>
         <section class="personal notLogin">
-            <img src="icon.jpg">
+            <img src="images/icon.jpg">
             <ul>
                 <li>您尚未登录！</li>
             </ul>
@@ -201,8 +201,8 @@
 <footer class="authorInfo">
     Produced by Hakutou 2019
 </footer>
-<script src="script_search.js"></script>
-<script src="script_login.js"></script>
-<script src="script_history.js"></script>
+<script src="script/script_search.js"></script>
+<script src="script/script_login.js"></script>
+<script src="script/script_history.js"></script>
 </body>
 </html>
