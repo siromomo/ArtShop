@@ -41,14 +41,14 @@
         <p></p>
         <p>用户名：<br><input name="user" type="text"></p>
         <p>密码：<br><input name="pwd" type="password"></p>
-        <p class="verClass">验证码：<input type="text" name="ver"><br>
+        <div class="verClass">验证码：<input type="text" name="ver"><br>
         <div class="verification">
             <img id="1" src="verificationCode/1.jpg">
             <img id="5" src="verificationCode/5.jpg">
             <img id="2" src="verificationCode/2.jpg">
             <img id="3" src="verificationCode/3.jpg">
         </div>
-        </p>
+        </div>
         <p><input type="button" value="登录" id="loginButton" onclick="loginSubmit();"></p>
     </form>
 </div>
@@ -82,17 +82,16 @@
         个人信息
     </div>
     <aside class="left">
-        <div class="personal login">
+        <section class="personal login">
             <img src="icon.jpg">
             <ul>
                 <li>用户名：hakutou</li>
                 <li>已完成订单：0件</li>
                 <li>未完成订单：0件</li>
-                <span class="hoverSpan" onmouseover="showCartContent();" onmouseleave="hideCartContent();"><li><a href="shoppingCart.html" class="personalLink"
-                       >购物车</a>：0件</li></span>
+                <li>购物车：0件</li>
                 <li><a href="info.html" class="personalLink">read more</a></li>
             </ul>
-        </div>
+        </section>
         <div id="showCartInOtherPage">
             <table>
                 <tr>
@@ -107,12 +106,12 @@
                 </tr>
             </table>
         </div>
-        <div class="personal notLogin">
+        <section class="personal notLogin">
             <img src="icon.jpg">
             <ul>
                 <li>您尚未登录！</li>
             </ul>
-        </div>
+        </section>
     </aside>
     <div class="leftTop whiteBlock"></div>
     <div class="leftTop leftTop2">
@@ -130,7 +129,7 @@
     </aside>
     <article class="right">
         <div class="cartTitle">购物车</div>
-        <div class="cartContent">
+        <section class="cartContent">
             <table id="cartItems">
                 <tr>
                     <td class="cartItemImgTd"><img src="images/works/medium/001080.jpg"></td>
@@ -152,10 +151,10 @@
                 </tr>
             </table>
             <button id="makeCartEmpty" onclick="makeCartEmpty();">结算</button>
-        </div>
-        <div id="noItemInCart">
+        </section>
+        <section id="noItemInCart">
             <p>您的购物车还没有物品！</p>
-        </div>
+        </section>
         <footer class="changePage">
         <ul>
             <li><a href="shoppingCart.html"> ◀ </a></li>
@@ -167,12 +166,9 @@
             <li><a href="shoppingCart.html"> ▶ </a></li>
         </ul>
         </footer><footer class="authorInfo">
-        make by Hakutou 2019
+        Produced by Hakutou 2019
     </footer>
     </article>
-
-
-
 <script src="script_login.js"></script>
 <script src="script_cart.js"></script>
 <script src="script_history.js"></script>

@@ -1,3 +1,6 @@
+aside, article, section, footer, header, nav{
+    display: block;
+}
 .container{
     position: relative;
     z-index: 0;
@@ -61,21 +64,10 @@
     color: white;
     text-align: center;
 }
-
-.toLogin li a:link{
+.navLink a:link, .toLogin li a:link, .navLink a:visited{
      color: white;
 }
-.navLink a:link{
-     color: white !important;
-}
-.navLink a:visited{
-    color: white;
-}
-.navLink a:hover{
-    color: #ff5555;
-}
-
-.toLogin li a:hover{
+.navLink a:hover, .toLogin li a:hover{
     color: #ff5555;
 }
 ul, menu, dir {
@@ -127,35 +119,8 @@ ul, menu, dir {
     right: 0;
     top: 0;
 }
-#invalidUser{
-    display: none;
-    color: red;
-}
-#invalidRep{
-    display: none;
-    color: red;
-}
-#invalidPwd{
-    display: none;
-    color: red;
-}
-#invalidMail{
-    display: none;
-    color: red;
-}
-#emptyUser{
-    display: none;
-    color: red;
-}
-#emptyRep{
-    display: none;
-    color: red;
-}
-#emptyPwd{
-    display: none;
-    color: red;
-}
-#emptyMail{
+#invalidUser, #invalidMail, #invalidTel, #invalidRep, #invalidPwd,
+#emptyTel, #emptyMail, #emptyPwd, #emptyRep, #emptyUser{
     display: none;
     color: red;
 }
@@ -229,6 +194,7 @@ ul, menu, dir {
 }
 .personal ul{
     position: relative;
+    width: max-content;
     left:16%;
 }
 .personal li{
@@ -367,22 +333,23 @@ ul, menu, dir {
 }
 .paintings{
     margin-left: 5%;
+    margin-bottom: 5%;
 }
-.paintings td{
+.paintings tr td{
     width: 30%;
 }
-.paintings td img{
+.paintings tr td img{
     border-radius: 50%;
     background: #fff0f0;
     padding: 2.5% 2.5%;
 }
-.paintings td p{
+.paintings tr td p{
     margin-right: 5%;
     width: 90%;
     text-align: center;
     background: #f0f0f0;
 }
-.paintings td p a{
+.paintings tr td p a{
     color: black !important;
 }
 .itemInfo{
@@ -595,6 +562,7 @@ ul, menu, dir {
 }
 .sellList{
     margin-top: 5%;
+    margin-bottom: 5%;
     height: 15%;
     background: #f0f0f0;
     position: relative;
@@ -626,10 +594,13 @@ ul, menu, dir {
     color: #ff5555;
 }
 .authorInfo{
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: fit-content;
+    width: 100%;
     text-align: center;
-    background: white;
+    background: #ff9999;
     color: white;
     font-weight: bold;
 }
@@ -639,7 +610,7 @@ ul, menu, dir {
     height: fit-content;
     width: fit-content;
     position: absolute;
-    left: 20%;
+    left: 25%;
     top: 56%;
     z-index: 2;
     opacity: 0.7;

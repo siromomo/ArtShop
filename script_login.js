@@ -1,16 +1,15 @@
 window.onload = function () {
-    if(window.location.href.indexOf("mail") !== -1 && document.cookie.indexOf("haveAlerted") === -1) {
+    if (window.location.href.indexOf("mail") !== -1 && document.cookie.indexOf("haveAlerted") === -1) {
         alert("注册成功!");
-        var t=new Date(new Date().getTime()+1000*60*60*24*30);
-        document.cookie="haveAlerted=true; expires="+t.toGMTString();
+        var t = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+        document.cookie = "haveAlerted=true; expires=" + t.toGMTString();
     }
     var navItems = document.getElementsByClassName("navLink");
-    if(document.title === "Art Shop"){
+    if (document.title === "Art Shop") {
         var curr = navItems[0].getElementsByTagName("a")[0];
         curr.removeAttribute("href");
         curr.style.color = "#ff5555";
-    }
-    else if(document.title === "Art Shop - Painting Item"){
+    } else if (document.title === "Art Shop - Painting Item") {
         var curr = navItems[1].getElementsByTagName("a")[0];
         curr.removeAttribute("href");
         curr.style.color = "#ff5555";
@@ -40,6 +39,9 @@ if (document.cookie.length > 0 && getCookie("user").length > 0) {
     hasNotLogin.style.display = "block";
     toLogin.style.display = "inline";
     welcome.style.display = "none";
+    if(document.title === "Art Shop - Shopping Cart" || document.title === "Art Shop - Personal Info"){
+        window.location.href = "index.html";
+    }
 }
 
 var verImgDiv = document.getElementsByClassName("verification")[0];
@@ -153,6 +155,8 @@ function register() {
     invalid3.style.display = "none";
     var invalid4 = document.getElementById("invalidRep");
     invalid4.style.display = "none";
+    var invalid5 = document.getElementById("invalidTel");
+    invalid5.style.display = "none";
     var empty1 = document.getElementById("emptyUser");
     empty1.style.display = "none";
     var empty2 = document.getElementById("emptyMail");
@@ -161,6 +165,8 @@ function register() {
     empty3.style.display = "none";
     var empty4 = document.getElementById("emptyRep");
     empty4.style.display = "none";
+    var empty5 = document.getElementById("emptyTel");
+    empty5.style.display = "none";
 
     var regUserInput = document.getElementById("regUser");
     regUserInput.value = "";
@@ -170,6 +176,8 @@ function register() {
     regPwdInput.value = "";
     var regRepInput = document.getElementById("regRepPwd");
     regRepInput.value = "";
+    var regTelInput = document.getElementById("regTel");
+    regTelInput.value = "";
 }
 
 function logout() {
@@ -200,33 +208,34 @@ function checkRegUser(user) {
 }
 
 function checkRegPwd(pwd) {
-    if(pwd.length === 0){
+    if (pwd.length === 0) {
         var emptyPwd = document.getElementById("emptyPwd");
         emptyPwd.style.display = "inline";
         regValid = false;
-    }else{
+    } else {
         var emptyPwd = document.getElementById("emptyPwd");
         emptyPwd.style.display = "none";
         regValid = true;
-    var regUserInput = document.getElementById("regUser");
-    if (pwd.length < 6 || pwd === regUserInput.value) {
-        var invalidUser = document.getElementById("invalidPwd");
-        invalidUser.style.display = "inline";
-        regValid = false;
-    } else {
-        var invalidUser = document.getElementById("invalidPwd");
-        invalidUser.style.display = "none";
-        regValid = true;
-    }}
+        var regUserInput = document.getElementById("regUser");
+        if (pwd.length < 6 || pwd === regUserInput.value) {
+            var invalidUser = document.getElementById("invalidPwd");
+            invalidUser.style.display = "inline";
+            regValid = false;
+        } else {
+            var invalidUser = document.getElementById("invalidPwd");
+            invalidUser.style.display = "none";
+            regValid = true;
+        }
+    }
 }
 
 function checkRegEmail(email) {
     var reg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
-    if(email.length === 0){
+    if (email.length === 0) {
         var emptyMail = document.getElementById("emptyMail");
         emptyMail.style.display = "inline";
         regValid = false;
-    }else {
+    } else {
         var emptyMail = document.getElementById("emptyMail");
         emptyMail.style.display = "none";
         regValid = true;
@@ -242,13 +251,32 @@ function checkRegEmail(email) {
     }
 }
 
+function checkRegTel(tel) {
+    var reg = /^[0-9]+$/;
+    var emptyTel = document.getElementById("emptyTel");
+    if (tel.length === 0) {
+        emptyTel.style.display = "inline";
+        regValid = false;
+    } else {
+        emptyTel.style.display = "none";
+        var invalidTel = document.getElementById("invalidTel");
+        if (tel.length !== 11 || !reg.test(tel)) {
+            invalidTel.style.display = "inline";
+            regValid = false;
+        } else {
+            invalidTel.style.display = "none";
+            regValid = true;
+        }
+    }
+}
+
 function checkRegRepPwd(repPwd) {
     var pwd = document.getElementById("regPwd");
-    if(repPwd.length === 0){
+    if (repPwd.length === 0) {
         var emptyRep = document.getElementById("emptyRep");
         emptyRep.style.display = "inline";
         regValid = false;
-    }else {
+    } else {
         var emptyRep = document.getElementById("emptyRep");
         emptyRep.style.display = "none";
         regValid = true;
@@ -279,16 +307,17 @@ function registerSubmit() {
         return;
     var regRepInput = document.getElementById("regRepPwd");
     checkRegRepPwd(regRepInput.value);
+    var regTelInput = document.getElementById("regTel");
+    checkRegTel(regTelInput.value);
     var regForm = document.getElementById("registerForm");
     if (regValid) {
         try {
             document.cookie = "haveAlerted=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
             regForm.submit();
-        }catch (e) {
+        } catch (e) {
             alert("注册失败，服务器错误");
         }
-    }
-    else{
+    } else {
         alert("注册失败，填写不符合格式");
     }
 }
@@ -310,13 +339,21 @@ var regRepInput = document.getElementById("regRepPwd");
 regRepInput.onblur = function () {
     checkRegRepPwd(regRepInput.value);
 };
+var regTelInput = document.getElementById("regTel");
+regTelInput.onblur = function () {
+    checkRegTel(regTelInput.value);
+}
+
 function removeFromCart() {
     alert("删除成功!");
 }
+
 function showCartContent() {
     var contentDiv = document.getElementById("showCartInOtherPage");
     contentDiv.style.display = "block";
+
 }
+
 function hideCartContent() {
     var contentDiv = document.getElementById("showCartInOtherPage");
     contentDiv.style.display = "none";

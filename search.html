@@ -82,17 +82,18 @@
         个人信息
     </div>
     <aside class="left">
-        <div class="personal login">
+        <section class="personal login">
             <img src="icon.jpg">
             <ul>
                 <li>用户名：hakutou</li>
                 <li>已完成订单：0件</li>
                 <li>未完成订单：0件</li>
-                <span class="hoverSpan" onmouseover="showCartContent();" onmouseleave="hideCartContent();"><li><a href="shoppingCart.html" class="personalLink"
-                >购物车</a>：0件</li></span>
+                <li><span class="hoverSpan" onmouseenter="showCartContent();" onmouseleave="hideCartContent();"><a
+                        href="shoppingCart.html" class="personalLink"
+                >购物车</a></span>：0件</li>
                 <li><a href="info.html" class="personalLink">read more</a></li>
             </ul>
-        </div>
+        </section>
         <div id="showCartInOtherPage">
             <table>
                 <tr>
@@ -107,12 +108,12 @@
                 </tr>
             </table>
         </div>
-        <div class="personal notLogin">
+        <section class="personal notLogin">
             <img src="icon.jpg">
             <ul>
                 <li>您尚未登录！</li>
             </ul>
-        </div>
+        </section>
     </aside>
     <div class="leftTop whiteBlock"></div>
     <div class="leftTop leftTop2">
@@ -195,10 +196,11 @@
         <div id="noSearchRes">
             <p>没有找到相关结果</p>
         </div>
-        <footer class="authorInfo">
-            make by Hakutou 2019
-        </footer>
+
     </article>
+<footer class="authorInfo">
+    Produced by Hakutou 2019
+</footer>
 <script src="script_search.js"></script>
 <script src="script_login.js"></script>
 <script src="script_history.js"></script>

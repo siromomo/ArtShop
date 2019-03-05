@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Art Shop - Personal Info</title>
@@ -81,17 +81,18 @@
     个人信息
 </div>
 <aside class="left">
-    <div class="personal login">
+    <section class="personal login">
         <img src="icon.jpg">
         <ul>
             <li>用户名：hakutou</li>
             <li>已完成订单：0件</li>
             <li>未完成订单：0件</li>
-            <span class="hoverSpan" onmouseover="showCartContent();" onmouseleave="hideCartContent();"><li><a href="shoppingCart.html" class="personalLink"
-            >购物车</a>：0件</li></span>
+            <li><span class="hoverSpan" onmouseenter="showCartContent();" onmouseleave="hideCartContent();"><a
+                    href="shoppingCart.html" class="personalLink"
+            >购物车</a></span>：0件</li>
             <li><a href="info.html" class="personalLink">read more</a></li>
         </ul>
-    </div>
+    </section>
     <div id="showCartInOtherPage">
         <table>
             <tr>
@@ -106,12 +107,12 @@
             </tr>
         </table>
     </div>
-    <div class="personal notLogin">
+    <section class="personal notLogin">
         <img src="icon.jpg">
         <ul>
             <li>您尚未登录！</li>
         </ul>
-    </div>
+    </section>
 </aside>
 <div class="leftTop whiteBlock"></div>
 <div class="leftTop leftTop2">
@@ -128,7 +129,7 @@
     </div>
 </aside>
 <article class="right">
-    <div class="fundamentalInfo">
+    <section class="fundamentalInfo">
         <span id="fundInfoImg"><img src="icon.jpg"></span>
         <span id="fundInfoText">
             <ul>
@@ -142,8 +143,8 @@
             </ul>
         </span>
         <span id="giveMeMoney"><a href="javascript:void (0);" onclick="alert('充值成功');">充值</a></span>
-    </div>
-    <div class="orderList">
+    </section>
+    <section class="orderList">
         购买订单列表：
         <table class="orderListTable">
             <tr>
@@ -159,8 +160,8 @@
                 <td>订单金额：NaN</td>
             </tr>
         </table>
-    </div>
-    <div class="upList">
+    </section>
+    <section class="upList">
         上传订单列表：
         <table class="orderListTable">
             <tr>
@@ -176,8 +177,8 @@
                 <td>订单金额：NaN</td>
             </tr>
         </table>
-    </div>
-    <div class="sellList">
+    </section>
+    <section class="sellList">
         卖出订单列表：
         <table class="orderListTable">
             <tr>
@@ -193,11 +194,11 @@
                 <td>订单金额：NaN</td>
             </tr>
         </table>
-    </div>
+    </section>
 </article>
 
     <footer class="authorInfo">
-        make by Hakutou 2019
+        Produced by Hakutou 2019
     </footer>
     <script src="script_login.js"></script>
 <script src="script_history.js"></script>

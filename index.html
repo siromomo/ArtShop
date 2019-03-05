@@ -41,12 +41,12 @@
         <p>用户名：<br><input name="user" type="text"></p>
         <p>密码：<br><input name="pwd" type="password"></p>
         <p class="verClass">验证码：<input type="text" name="ver"><br>
-            <div class="verification">
-                <img id="1" src="verificationCode/1.jpg">
-                <img id="5" src="verificationCode/5.jpg">
-                <img id="2" src="verificationCode/2.jpg">
-                <img id="3" src="verificationCode/3.jpg">
-            </div>
+        <div class="verification">
+            <img id="1" src="verificationCode/1.jpg">
+            <img id="5" src="verificationCode/5.jpg">
+            <img id="2" src="verificationCode/2.jpg">
+            <img id="3" src="verificationCode/3.jpg">
+        </div>
         </p>
         <p><input type="button" value="登录" id="loginButton" onclick="loginSubmit();"></p>
     </form>
@@ -62,6 +62,10 @@
             <span id="invalidMail">邮箱不符合格式<br><span class="former">请填写邮箱名@服务商.com/org/net/cn</span></span>
             <span id="emptyMail">未填写邮箱</span>
         </p>
+        <p>电话：<input id="regTel" name="tel" type="text">
+            <span id="invalidTel">电话不符合格式<br><span class="former">请填写11位手机号</span></span>
+            <span id="emptyTel">未填写电话</span>
+        </p>
         <p>密码：<input id="regPwd" name="pwd" type="password">
             <span id="invalidPwd">密码不符合格式<br><span class="former">至少需要六个字符且不能与用户名相同</span></span>
             <span id="emptyPwd">未填写密码</span>
@@ -74,120 +78,123 @@
     </form>
 </div>
 <div class="cover"></div>
-    <div class="footPrint">
-        <span class="footPrintTitle">您的足迹：</span><span class="footPrintContent">首页</span>
+<div class="footPrint">
+    <span class="footPrintTitle">您的足迹：</span><span class="footPrintContent">首页</span>
+</div>
+<div class="leftTop">
+    个人信息
+</div>
+<aside class="left">
+    <section class="personal login">
+        <img src="icon.jpg">
+        <ul>
+            <li>用户名：hakutou</li>
+            <li>已完成订单：0件</li>
+            <li>未完成订单：0件</li>
+            <li><span class="hoverSpan" onmouseenter="showCartContent();" onmouseleave="hideCartContent();"><a
+                    href="shoppingCart.html" class="personalLink"
+            >购物车</a></span>：0件</li>
+            <li><a href="info.html" class="personalLink">read more</a></li>
+        </ul>
+    </section>
+    <div id="showCartInOtherPage">
+        <table>
+            <tr>
+                <td>
+                    <img src="images/works/small/001080.jpg">
+                    <p>title</p>
+                </td>
+                <td>
+                    <img src="images/works/small/008020.jpg">
+                    <p>title</p>
+                </td>
+            </tr>
+        </table>
     </div>
-    <div class="leftTop">
-        个人信息
+    <section class="personal notLogin">
+        <img src="icon.jpg">
+        <ul>
+            <li>您尚未登录！</li>
+        </ul>
+    </section>
+</aside>
+<div class="leftTop whiteBlock"></div>
+<div class="leftTop leftTop2">
+    热门风格
+</div>
+<aside class="left">
+    <div class="personal hotStyle">
+        <ul>
+            <li>hot style 1</li>
+            <li>hot style 2</li>
+            <li>hot style 3</li>
+            <li>hot style 4</li>
+        </ul>
     </div>
-    <aside class="left">
-        <div class="personal login">
-            <img src="icon.jpg">
-            <ul>
-                <li>用户名：hakutou</li>
-                <li>已完成订单：0件</li>
-                <li>未完成订单：0件</li>
-                <span class="hoverSpan" onmouseover="showCartContent();" onmouseleave="hideCartContent();"><li><a href="shoppingCart.html" class="personalLink"
-                >购物车</a>：0件</li></span>
-                <li><a href="info.html" class="personalLink">read more</a></li>
+</aside>
+<article class="right">
+    <section class="hotPaint">
+        <div class="hotPaintImg">
+            <ul class="imgList">
+                <li>
+                    <span><a href="item.html"><img src="images/works/large/002030.jpg"></a></span>
+                    <div>
+                        <p class="title">title - artist</p>
+                        <p class="info">information about the paint</p>
+                    </div>
+                </li>
+                <li>
+                    <span><a href="item.html"><img src="images/works/large/005060.jpg"></a></span>
+                    <div>
+                        <p class="title">title - artist</p>
+                        <p class="info">information about the paint</p>
+                    </div>
+                </li>
+                <li>
+                    <span><a href="item.html"><img src="images/works/large/008020.jpg"></a></span>
+                    <div>
+                        <p class="title">title - artist</p>
+                        <p class="info">information about the paint</p>
+                    </div>
+                </li>
+                <li>
+                    <span><a href="item.html"><img src="images/works/large/015100.jpg"></a></span>
+                    <div>
+                        <p class="title">title - artist</p>
+                        <p class="info">information about the paint</p>
+                    </div>
+                </li>
             </ul>
-        </div>
-        <div id="showCartInOtherPage">
-            <table>
-                <tr>
-                    <td>
-                        <img src="images/works/small/001080.jpg">
-                        <p>title</p>
-                    </td>
-                    <td>
-                        <img src="images/works/small/008020.jpg">
-                        <p>title</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="personal notLogin">
-            <img src="icon.jpg">
-            <ul>
-                <li>您尚未登录！</li>
-            </ul>
-        </div>
-    </aside>
-    <div class="leftTop whiteBlock"></div>
-    <div class="leftTop leftTop2">
-        热门风格
-    </div>
-    <aside class="left">
-        <div class="personal hotStyle">
-            <ul>
-                <li>hot style 1</li>
-                <li>hot style 2</li>
-                <li>hot style 3</li>
-                <li>hot style 4</li>
-            </ul>
-        </div>
-    </aside>
-    <article class="right">
-        <div class="hotPaint">
-            <div class="hotPaintImg">
-                <ul class="imgList">
-                    <li>
-                        <span><a href="item.html"><img src="images/works/large/002030.jpg"></a></span>
-                        <div>
-                            <p class="title">title - artist</p>
-                            <p class="info">information about the paint</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span><a href="item.html"><img src="images/works/large/005060.jpg"></a></span>
-                        <div>
-                            <p class="title">title - artist</p>
-                            <p class="info">information about the paint</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span><a href="item.html"><img src="images/works/large/008020.jpg"></a></span>
-                        <div>
-                            <p class="title">title - artist</p>
-                            <p class="info">information about the paint</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span><a href="item.html"><img src="images/works/large/015100.jpg"></a></span>
-                        <div>
-                            <p class="title">title - artist</p>
-                            <p class="info">information about the paint</p>
-                        </div>
-                    </li>
-                </ul>
-                <div id="block"></div>
-                <div id="block2">
-                    <p class="title">title - artist</p>
-                    <p class="info">information about the paint</p>
-                </div>
+            <div id="block"></div>
+            <div id="block2">
+                <p class="title">title - artist</p>
+                <p class="info">information about the paint</p>
             </div>
         </div>
+    </section>
 
-        <div class="otherPaint">
-            <table class="paintings">
-                <td>
-                    <a href="item.html"><img src="images/works/average/001020.jpg"></a>
-                    <p>title - artist</p>
-                </td>
-                <td>
-                    <a href="item.html"><img src="images/works/average/001050.jpg"></a>
-                    <p>title - artist</p>
-                </td>
-                <td>
-                    <a href="item.html"><img src="images/works/average/001060.jpg"></a>
-                    <p>title - artist</p>
-                </td>
-            </table>
-        </div>
-    </article>
+    <section class="otherPaint">
+        <table class="paintings">
+            <tr>
+            <td>
+                <a href="item.html"><img src="images/works/average/001020.jpg"></a>
+                <p>title - artist</p>
+            </td>
+            <td>
+                <a href="item.html"><img src="images/works/average/001050.jpg"></a>
+                <p>title - artist</p>
+            </td>
+            <td>
+                <a href="item.html"><img src="images/works/average/001060.jpg"></a>
+                <p>title - artist</p>
+            </td>
+            </tr>
+        </table>
+    </section>
+</article>
 
 <footer class="authorInfo">
-    make by Hakutou 2019
+    Produced by Hakutou 2019
 </footer>
 <script src="script_login.js"></script>
 <script src="script_history.js"></script>
