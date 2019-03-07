@@ -119,8 +119,7 @@ ul, menu, dir {
     right: 0;
     top: 0;
 }
-#invalidUser, #invalidMail, #invalidTel, #invalidRep, #invalidPwd,
-#emptyTel, #emptyMail, #emptyPwd, #emptyRep, #emptyUser{
+.invalid{
     display: none;
     color: red;
 }
@@ -466,6 +465,7 @@ ul, menu, dir {
     font-weight: bold;
     background: #fff0f0;
     margin-bottom: 2.5%;
+    margin-top: 0;
 }
 .cartContent{
     background: #f0f0f0;

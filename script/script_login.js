@@ -21,10 +21,13 @@ if (document.cookie.length > 0 && getCookie("user").length > 0) {
     var hasNotLogin = document.getElementsByClassName("personal notLogin")[0];
     var toLogin = document.getElementsByClassName("toLogin")[0];
     var welcome = document.getElementsByClassName("welcome")[0];
+    var username = document.getElementById("hadLoginUsername");
     hadLogin.style.display = "block";
     hasNotLogin.style.display = "none";
     toLogin.style.display = "none";
     welcome.style.display = "inline";
+    username.innerText = getCookie("user");
+
 
     //var right = document.getElementsByClassName("right")[0];
     //right.style.marginTop = "-24%";
@@ -83,7 +86,6 @@ function loginSubmit() {
     let loginForm = document.getElementById("loginForm");
     let inputs = loginForm.getElementsByTagName("input");
     let valid = true;
-    let user = "";
     for (let i = 0; i < inputs.length; i++) {
         let ele = inputs[i];
         if (ele.name === "user") {
@@ -91,19 +93,10 @@ function loginSubmit() {
                 alert("请填写用户名");
                 valid = false;
                 break;
-            } else if (ele.value !== "hakutou") {
-                alert("用户不存在");
-                valid = false;
-                break;
             }
-            user = ele.value;
         } else if (ele.name === "pwd") {
             if (ele.value === null || ele.value.length === 0) {
                 alert("请填写密码");
-                valid = false;
-                break;
-            } else if (ele.value !== "123456") {
-                alert("密码错误");
                 valid = false;
                 break;
             }
@@ -127,12 +120,12 @@ function loginSubmit() {
             }
         }
     }
-    if (valid === true) {
-        let date = new Date();
-        let expiresDays = 1;
-        date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000);
-        document.cookie = "user=" + user + "; expires=" + date.toGMTString();
-        loginForm.submit();
+    if(valid){
+        try {
+            loginForm.submit();
+        }catch (e) {
+            alert("服务器错误");
+        }
     }
 }
 
@@ -147,37 +140,13 @@ function register() {
     registerBlock.style.top = (window.innerHeight - registerBlock.scrollHeight) / 2 + "px";
     document.documentElement.style.overflowY = 'hidden';
 
-    var invalid1 = document.getElementById("invalidUser");
-    invalid1.style.display = "none";
-    var invalid2 = document.getElementById("invalidMail");
-    invalid2.style.display = "none";
-    var invalid3 = document.getElementById("invalidPwd");
-    invalid3.style.display = "none";
-    var invalid4 = document.getElementById("invalidRep");
-    invalid4.style.display = "none";
-    var invalid5 = document.getElementById("invalidTel");
-    invalid5.style.display = "none";
-    var empty1 = document.getElementById("emptyUser");
-    empty1.style.display = "none";
-    var empty2 = document.getElementById("emptyMail");
-    empty2.style.display = "none";
-    var empty3 = document.getElementById("emptyPwd");
-    empty3.style.display = "none";
-    var empty4 = document.getElementById("emptyRep");
-    empty4.style.display = "none";
-    var empty5 = document.getElementById("emptyTel");
-    empty5.style.display = "none";
+    var invalidEles = document.getElementsByClassName("invalid");
+    for(let i = 0; i < invalidEles.length; i++)
+        invalidEles[i].style.display = "none";
 
-    var regUserInput = document.getElementById("regUser");
-    regUserInput.value = "";
-    var regEmailInput = document.getElementById("regEmail");
-    regEmailInput.value = "";
-    var regPwdInput = document.getElementById("regPwd");
-    regPwdInput.value = "";
-    var regRepInput = document.getElementById("regRepPwd");
-    regRepInput.value = "";
-    var regTelInput = document.getElementById("regTel");
-    regTelInput.value = "";
+    var inputs = document.getElementsByClassName("regInput");
+    for(let i = 0; i < inputs.length; i++)
+        inputs[i].value = "";
 }
 
 function logout() {
@@ -292,6 +261,18 @@ function checkRegRepPwd(repPwd) {
     }
 }
 
+function checkRegAddr(repAddr) {
+    var emptyAddr = document.getElementById("emptyAddr");
+    if(repAddr.length === 0){
+        emptyAddr.style.display = "inline";
+        regValid = false;
+    }
+    else{
+        emptyAddr.style.display = "none";
+        regValid = true;
+    }
+}
+
 function registerSubmit() {
     var regUserInput = document.getElementById("regUser");
     checkRegUser(regUserInput.value);
@@ -301,14 +282,23 @@ function registerSubmit() {
     checkRegEmail(regEmailInput.value);
     if (!regValid)
         return;
+    var regTelInput = document.getElementById("regTel");
+    checkRegTel(regTelInput.value);
+    if(!regValid)
+        return;
+    var regAddrInput = document.getElementById("regAddr");
+    checkRegAddr(regAddrInput.value);
+    if(!regValid)
+        return;
     var regPwdInput = document.getElementById("regPwd");
     checkRegPwd(regPwdInput.value);
     if (!regValid)
         return;
     var regRepInput = document.getElementById("regRepPwd");
     checkRegRepPwd(regRepInput.value);
-    var regTelInput = document.getElementById("regTel");
-    checkRegTel(regTelInput.value);
+    if(!regValid)
+        return;
+
     var regForm = document.getElementById("registerForm");
     if (regValid) {
         try {
@@ -342,6 +332,10 @@ regRepInput.onblur = function () {
 var regTelInput = document.getElementById("regTel");
 regTelInput.onblur = function () {
     checkRegTel(regTelInput.value);
+};
+var regAddrInput = document.getElementById("regAddr");
+regAddrInput.onblur = function () {
+    checkRegAddr(regAddrInput.value);
 }
 
 function removeFromCart() {
